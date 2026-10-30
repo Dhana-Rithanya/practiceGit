@@ -1,0 +1,8 @@
+- hosts: local           # 0 spaces
+  become: yes            # 2 spaces
+
+  tasks:                 # 2 spaces
+    - name: Create group # 4 spaces
+      ansible.builtin.group:  # 6 spaces
+        name: developers      # 8 spaces
+        state: present        # 8 spaces
