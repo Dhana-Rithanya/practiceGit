@@ -1,0 +1,29 @@
+---
+- hosts: local
+  become: yes
+  tasks:
+    - name: Create group
+      group:
+        name: developers
+        state: present
+
+    - name: Create user
+      user:
+        name: devuser
+        group: developers
+        create_home: yes
+        state: present
+
+    - name: Create .ssh directory
+      file:
+        path: /home/devuser/.ssh
+        state: directory
+        owner: devuser
+        group: developers
+        mode: '0700'
+
+    - name: Add SSH public key
+      authorized_key:
+        user: devuser
+        state: present
+        key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCExampleSSHKey"
