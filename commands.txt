@@ -8,8 +8,8 @@ nano user_group_ssh.yml
     (yml code)
 ssh-keygen
 ls -l /root/.ssh/
-cat /root/.ssh/id_rsa.pub
+
 cat ~/.ssh/id_ed25519.pub
-cat /root/.ssh/id_rsa.pub >> /home/devuser/.ssh/authorized_key
+
 sudo ansible-playbook -inventory.ini user_group_ssh.yml
 id devuser
