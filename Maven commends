@@ -1,0 +1,5 @@
+mvn --version
+
+mvn archetype:generate -DgroupId=com.example -DartifactId=SimpleWebApp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+
+mvn clean package
